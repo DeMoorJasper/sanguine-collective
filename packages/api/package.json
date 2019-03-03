@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./server.js"
+  },
   "dependencies": {
     "@sangu/firestore": "^1.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.16.4"
   }
 }
