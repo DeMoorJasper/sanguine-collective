@@ -1,20 +1,21 @@
-const express = require("express");
-const app = express();
+const http = require("http");
+const url = require("url");
 
 const PORT = process.env.PORT || 8080;
 
-const functions = ["artists", "fanlink", "fanlinks", "fanlinkredirect"];
+let server = http.createServer(function(req, res, next) {
+  let { pathname } = url.parse(req.url);
+  let functionName = pathname.substring(1);
 
-for (let func of functions) {
-  let middlewareFunction = require(`./${func}/index.js`);
-
-  app.use(`/${func}`, middlewareFunction);
-
-  console.log("Registered endpoint:", `/${func}`);
-}
-
-app.use("/", (req, res) => res.end(`functions: ${JSON.stringify(functions)}`));
-
-app.listen(PORT, () => {
-  console.log("Server running on port:", PORT);
+  try {
+    let middlewareFunction = require(`./${functionName}/index.js`);
+    console.log("Handle request:", req.url);
+    return middlewareFunction(req, res, next);
+  } catch (e) {
+    res.statusCode = 404;
+    res.end("Function not defined.");
+  }
 });
+
+server.listen(PORT);
+console.log(`Server Started: http://localhost:${PORT}`);

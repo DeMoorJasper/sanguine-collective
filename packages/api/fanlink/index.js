@@ -1,3 +1,4 @@
+const url = require("url");
 const fanlinks = require("@sangu/firestore/fanlinks");
 const fanlinkStats = require("@sangu/firestore/fanlink-stats");
 
@@ -5,7 +6,8 @@ async function fanlinkEndpoint(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
 
-  let id = isNaN(req.query.id) ? req.query.id : parseInt(req.query.id);
+  let { query } = url.parse(req.url, true);
+  let id = isNaN(query.id) ? query.id : parseInt(query.id);
   if (!id) {
     res.statusCode = 400;
     res.end(
@@ -37,7 +39,7 @@ async function fanlinkEndpoint(req, res) {
       ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress,
       type: "view"
     });
-    
+
     res.statusCode = 200;
     res.end(JSON.stringify(fanlink));
   } catch (e) {

@@ -1,3 +1,4 @@
+const url = require("url");
 const fanlinks = require("@sangu/firestore/fanlinks");
 const fanlinkStats = require("@sangu/firestore/fanlink-stats");
 
@@ -5,8 +6,9 @@ async function fanlinkRedirectEndpoint(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
 
-  let id = isNaN(req.query.id) ? req.query.id : parseInt(req.query.id);
-  let platform = req.query.platform;
+  let { query } = url.parse(req.url, true);
+  let id = isNaN(query.id) ? query.id : parseInt(query.id);
+  let platform = query.platform;
   if (!id || !platform) {
     res.statusCode = 400;
     res.end(
@@ -42,7 +44,11 @@ async function fanlinkRedirectEndpoint(req, res) {
         platform: platform,
         type: "redirect"
       });
-      res.redirect(link.uri);
+
+      res.statusCode = 302;
+      res.setHeader("Location", link.uri);
+      res.end();
+      return;
     } else {
       res.statusCode = 404;
       res.end(
