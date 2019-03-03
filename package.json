@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "deploy": "now"
+    "deploy": "now && now alias"
   },
   "workspaces": [
     "packages/*"
