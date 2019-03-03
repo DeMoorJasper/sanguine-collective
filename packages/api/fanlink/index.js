@@ -8,39 +8,35 @@ module.exports = async function(req, res) {
 
   let { query } = url.parse(req.url, true);
   let id = isNaN(query.id) ? query.id : parseInt(query.id);
-  if (!id) {
-    res.statusCode = 400;
-    res.end(
-      JSON.stringify({
-        type: "error",
-        message: "Please provide an id"
-      })
-    );
-    return;
-  }
-
   try {
-    let fanlink = await fanlinks.get(id);
-    if (!fanlink) {
-      res.statusCode = 404;
-      res.end(
-        JSON.stringify({
-          type: "error",
-          message: "Fanlink not found!"
-        })
-      );
-      return;
+    if (id) {
+      let fanlink = await fanlinks.get(id);
+      if (!fanlink) {
+        res.statusCode = 404;
+        res.end(
+          JSON.stringify({
+            type: "error",
+            message: "Fanlink not found!"
+          })
+        );
+        return;
+      }
+
+      fanlink.id = id;
+      fanlinkStats.add({
+        fanlink: id,
+        ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress,
+        type: "view"
+      });
+
+      res.statusCode = 200;
+      res.end(JSON.stringify(fanlink));
+    } else {
+      let fanlinksData = await fanlinks.getAll();
+      
+      res.statusCode = 200;
+      res.end(JSON.stringify(fanlinksData));
     }
-
-    fanlink.id = id;
-    fanlinkStats.add({
-      fanlink: id,
-      ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress,
-      type: "view"
-    });
-
-    res.statusCode = 200;
-    res.end(JSON.stringify(fanlink));
   } catch (e) {
     console.error(e);
     res.statusCode = 500;

@@ -53,7 +53,7 @@ const SocialAnnotation = P.extend`
 
 class Artists extends React.Component {
   static async getInitialProps({ query }) {
-    let artists = await axios.get("/artists");
+    let artists = await axios.get("/artist");
 
     return { artists: artists.data };
   }

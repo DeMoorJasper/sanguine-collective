@@ -35,7 +35,7 @@ const TrackCover = stylish.a`
 
 class Index extends React.Component {
   static async getInitialProps({ query }) {
-    let fanlinks = await axios.get("/fanlinks");
+    let fanlinks = await axios.get("/fanlink");
 
     return { fanlinks: fanlinks.data };
   }
