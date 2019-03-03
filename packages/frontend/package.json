@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "next",
+    "build": "next build",
+    "start:server": "next start",
+    "deploy": "now"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "tiny-stylish-components": "^0.0.8"
+  }
+}
