@@ -3,7 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-const functions = ["artists", "fanlink", "fanlinks"];
+const functions = ["artists", "fanlink", "fanlinks", "fanlinkredirect"];
 
 for (let func of functions) {
   let middlewareFunction = require(`./${func}/index.js`);
