@@ -5,6 +5,9 @@
   "author": "Jasper De Moor <jasperdemoor@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "deploy": "now"
+  },
   "workspaces": [
     "packages/*"
   ]

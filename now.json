@@ -1,7 +1,19 @@
 {
   "version": 2,
   "name": "Sanguine Collective",
-  "builds": [{ "src": "packages/frontend/package.json", "use": "@now/next" }],
-  "routes": [{ "src": "/(.*)", "dest": "/packages/frontend/$1" }],
-  "alias": ["sanguinecollective.eu", "www.sanguinecollective.eu"]
+  "builds": [
+    { "src": "packages/frontend/package.json", "use": "@now/next" },
+    { "src": "packages/api/artists/index.js", "use": "@now/node" },
+    { "src": "packages/api/fanlink/index.js", "use": "@now/node" },
+    { "src": "packages/api/fanlinks/index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/packages/api/$1" },
+    { "src": "/(.*)", "dest": "/packages/frontend/$1" }
+  ],
+  "alias": ["sanguinecollective.eu", "www.sanguinecollective.eu"],
+  "env": {
+    "SANGU_GCLOUD_PRIVATE_KEY_ID": "@sanguine_gcloud_private_key_id",
+    "SANGU_GCLOUD_PRIVATE_KEY": "@sanguine_gcloud_private_key"
+  }
 }

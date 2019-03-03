@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "@sangu/frontend",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,7 +7,6 @@
     "start": "next",
     "build": "next build",
     "start:server": "next start",
-    "deploy": "now",
     "now-build": "next build"
   },
   "dependencies": {

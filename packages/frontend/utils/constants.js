@@ -1,1 +1,1 @@
-export const API_URL = "https://api.sanguinecollective.eu";
+export const API_URL = "https://sanguinecollective.eu/api/";

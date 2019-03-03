@@ -1,9 +1,9 @@
 {
-  "name": "@sangu/api",
+  "name": "@sangu/firestore",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@sangu/firestore": "^1.0.0"
+    "firebase-admin": "^7.0.0"
   }
 }
