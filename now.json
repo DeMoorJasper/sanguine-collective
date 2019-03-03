@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "Sanguine Collective",
+  "builds": [{ "src": "packages/frontend/package.json", "use": "@now/next" }],
+  "routes": [{ "src": "/(.*)", "dest": "/packages/frontend/$1" }]
+}
