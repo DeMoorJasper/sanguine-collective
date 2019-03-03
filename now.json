@@ -11,6 +11,9 @@
   ],
   "alias": ["sanguinecollective.eu", "www.sanguinecollective.eu", "fanlink.sanguinecollective.eu", "www.fanlink.sanguinecollective.eu"],
   "env": {
-    "GCLOUD_SERVICE_ACCOUNT": "@sangu_gcloud_service_account"
+    "DYNAMODB_TABLE": "sanguine",
+    "ZEIT_AWS_REGION": "eu-central-1",
+    "ZEIT_AWS_ACCESS_KEY_ID": "",
+    "ZEIT_AWS_SECRET_ACCESS_KEY": ""
   }
 }

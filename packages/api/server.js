@@ -8,12 +8,23 @@ let server = http.createServer(function(req, res, next) {
   let functionName = pathname.substring(1);
 
   try {
-    let middlewareFunction = require(`./${functionName}/index.js`);
+    let middlewareFunction = null;
+    try {
+      middlewareFunction = require(`./${functionName}/index.js`);
+    } catch (e) {
+      console.error(e);
+      res.statusCode = 404;
+      res.end("Function not defined.");
+      return;
+    }
+    
     console.log("Handle request:", req.url);
     return middlewareFunction(req, res, next);
   } catch (e) {
-    res.statusCode = 404;
-    res.end("Function not defined.");
+    console.error(e);
+
+    res.statusCode = 500;
+    res.end(e.message);
   }
 });
 

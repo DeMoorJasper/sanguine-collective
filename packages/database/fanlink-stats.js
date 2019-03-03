@@ -1,35 +1,21 @@
-const firestore = require('./firestore');
+const AWS = require("./aws");
+const uuidv4 = require("uuid/v4");
 
-const COLLECTION = 'fanlink-stats';
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
+
+const COLLECTION = "fanlink-stats";
 
 function add(data) {
+  data.id = uuidv4();
+  data.collection = COLLECTION;
   data.timestamp = Date.now();
-  return firestore.collection(COLLECTION).add(data);
-}
 
-function set(id, data) {
-  return firestore.collection(COLLECTION).doc(id).set(data);
-}
+  let params = {
+    TableName: process.env.DYNAMODB_TABLE,
+    Item: data
+  };
 
-function get(id) {
-  return firestore.collection(COLLECTION).doc(id).get();
-}
-
-function getAll() {
-  return new Promise((resolve, reject) => {
-    firestore.collection(COLLECTION).orderBy('timestamp', 'desc').get().then(snapshot => {
-      let results = [];
-      snapshot.forEach(doc => {
-        let item = doc.data();
-        item.id = doc.id;
-        results.push(item);
-      });
-      return resolve(results);
-    }).catch(reject);
-  });
+  return dynamoDb.put(params).promise();
 }
 
 exports.add = add;
-exports.set = set;
-exports.get = get;
-exports.getAll = getAll;

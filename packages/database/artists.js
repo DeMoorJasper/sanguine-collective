@@ -1,34 +1,38 @@
-const firestore = require('./firestore');
+const AWS = require("./aws");
+const uuidv4 = require("uuid/v4");
 
-const COLLECTION = 'artists';
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-function add(data) {
-  return firestore.collection(COLLECTION).add(data);
+const COLLECTION = "artists";
+
+async function getAll() {
+  let params = {
+    TableName: process.env.DYNAMODB_TABLE,
+    ExpressionAttributeNames: {
+      "#c": "collection"
+    },
+    ExpressionAttributeValues: {
+      ":c": COLLECTION
+    },
+    KeyConditionExpression: "#c = :c"
+  };
+
+  let result = await dynamoDb.query(params).promise();
+
+  return result.Items;
 }
 
-function set(id, data) {
-  return firestore.collection(COLLECTION).doc(id).set(data);
+async function add(artist) {
+  artist.collection = COLLECTION;
+  artist.id = uuidv4();
+
+  let params = {
+    TableName: process.env.DYNAMODB_TABLE,
+    Item: artist
+  };
+
+  return dynamoDb.put(params).promise();
 }
 
-function get(id) {
-  return firestore.collection(COLLECTION).doc(id).get();
-}
-
-function getAll() {
-  return new Promise((resolve, reject) => {
-    firestore.collection(COLLECTION).get().then(snapshot => {
-      let results = [];
-      snapshot.forEach(doc => {
-        let item = doc.data();
-        item.id = doc.id;
-        results.push(item);
-      });
-      return resolve(results);
-    }).catch(reject);
-  });
-}
-
-exports.add = add;
-exports.set = set;
-exports.get = get;
 exports.getAll = getAll;
+exports.add = add;

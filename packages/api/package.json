@@ -4,12 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./server.js"
+    "start": "DYNAMODB_TABLE=sanguine node ./server.js"
   },
   "dependencies": {
-    "@sangu/firestore": "^1.0.0"
-  },
-  "devDependencies": {
-    "express": "^4.16.4"
+    "@sangu/database": "^1.0.0",
+    "uuid": "^3.3.2"
   }
 }

@@ -1,8 +1,8 @@
 const url = require("url");
-const fanlinks = require("@sangu/firestore/fanlinks");
-const fanlinkStats = require("@sangu/firestore/fanlink-stats");
+const fanlinks = require("@sangu/database/fanlinks");
+const fanlinkStats = require("@sangu/database/fanlink-stats");
 
-async function fanlinkRedirectEndpoint(req, res) {
+module.exports = async function(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
 
@@ -21,8 +21,8 @@ async function fanlinkRedirectEndpoint(req, res) {
   }
 
   try {
-    let doc = await fanlinks.get(id);
-    if (!doc.exists) {
+    let fanlink = await fanlinks.get(id);
+    if (!fanlink) {
       res.statusCode = 404;
       res.end(
         JSON.stringify({
@@ -32,8 +32,7 @@ async function fanlinkRedirectEndpoint(req, res) {
       );
       return;
     }
-
-    let fanlink = doc.data();
+    
     let link = Array.isArray(fanlink.links)
       ? fanlink.links.find(link => link.platform === platform)
       : undefined;
@@ -69,6 +68,4 @@ async function fanlinkRedirectEndpoint(req, res) {
       })
     );
   }
-}
-
-module.exports = fanlinkRedirectEndpoint;
+};

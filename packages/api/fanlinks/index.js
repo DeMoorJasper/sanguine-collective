@@ -1,6 +1,6 @@
-const fanlinks = require("@sangu/firestore/fanlinks");
+const fanlinks = require("@sangu/database/fanlinks");
 
-async function fanlinksEndpoint(req, res) {
+module.exports = async function(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
 
@@ -18,6 +18,4 @@ async function fanlinksEndpoint(req, res) {
       })
     );
   }
-}
-
-module.exports = fanlinksEndpoint;
+};

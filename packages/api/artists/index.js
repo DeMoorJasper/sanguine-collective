@@ -1,6 +1,6 @@
-const artists = require("@sangu/firestore/artists");
+const artists = require("@sangu/database/artists");
 
-async function artistsEndpoint(req, res) {
+module.exports = async function(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
 
@@ -18,6 +18,4 @@ async function artistsEndpoint(req, res) {
       })
     );
   }
-}
-
-module.exports = artistsEndpoint;
+};
