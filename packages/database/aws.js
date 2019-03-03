@@ -1,7 +1,9 @@
-const AWS = require("aws-sdk");
+const aws = require("aws-sdk");
 
-AWS.config.region = process.env.ZEIT_AWS_REGION;
-AWS.config.accessKeyId = process.env.ZEIT_AWS_ACCESS_KEY_ID;
-AWS.config.secretAccessKey = process.env.ZEIT_AWS_SECRET_ACCESS_KEY;
+aws.config.update({
+  accessKeyId: process.env.ZEIT_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.ZEIT_AWS_SECRET_ACCESS_KEY,
+  region: process.env.ZEIT_AWS_REGION
+});
 
-module.exports = AWS;
+module.exports = aws;
