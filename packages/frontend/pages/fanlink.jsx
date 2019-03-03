@@ -4,13 +4,13 @@ import { withRouter } from "next/router";
 import stylish, { css } from "tiny-stylish-components";
 
 import FanlinkHeader from "../components/FanlinkHeader";
+import { A, H2 } from "../components/stylish/Elements";
 import { Main } from "../components/stylish/Containers";
 import { API_URL } from "../utils/constants";
 
 import '../utils/setup';
 
-const H2 = stylish.h2`
-  font-family: 'Roboto', 'Open Sans', sans-serif;
+const FanlinkH2 = H2.extend`
   text-transform: uppercase;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -34,7 +34,7 @@ const Links = stylish.section`
   text-align: center;
 `;
 
-const A = stylish.a`
+const FanlinkAnchor = A.extend`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -42,11 +42,21 @@ const A = stylish.a`
   display: block;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: bold;
   color: #000000;
   border: 2px solid;
   padding: 10px;
   max-width: 200px;
+`;
+
+const UL = stylish.ul`
+  margin: 0;
+  padding: 0;
+`;
+
+const LI = stylish.li`
+  margin: 0;
+  padding: 0;
+  list-style: none;
 `;
 
 class Fanlink extends React.Component {
@@ -59,36 +69,34 @@ class Fanlink extends React.Component {
   render() {
     let { fanlink } = this.props;
 
-    console.log(fanlink);
-
     return (
       <div>
         <FanlinkHeader />
         <MainExtended>
-          <H2>{fanlink.songtitle}</H2>
+          <FanlinkH2>{fanlink.songtitle}</FanlinkH2>
           <IMG
             src={fanlink.coverimg}
             alt={fanlink.songtitle}
             title={fanlink.songtitle}
           />
           <Links>
-            <ul>
+            <UL>
               {Array.isArray(fanlink.links) &&
                 fanlink.links.map((link, index) => {
                   return (
-                    <li key={index}>
-                      <A
+                    <LI key={index}>
+                      <FanlinkAnchor
                         href={`${API_URL}/fanlinkredirect?id=${
                           fanlink.id
                         }&platform=${link.platform}`}
                       >
                         <i className={`fa ${link.icon}`} aria-hidden="true" />{" "}
                         {link.platform}
-                      </A>
-                    </li>
+                      </FanlinkAnchor>
+                    </LI>
                   );
                 })}
-            </ul>
+            </UL>
           </Links>
         </MainExtended>
       </div>

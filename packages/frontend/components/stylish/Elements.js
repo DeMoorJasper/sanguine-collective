@@ -5,9 +5,10 @@ const H1 = stylish.h1`
   font-family: ${FONT_FAMILY};
   text-align: left;
   font-size: 3rem;
+  font-weight: normal;
 `;
 
-const H2 = stylish.h1`
+const H2 = stylish.h2`
   font-family: ${FONT_FAMILY};
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -15,6 +16,7 @@ const H2 = stylish.h1`
   padding-bottom: 0.5rem;
   text-align: left;
   margin-bottom: 0.5rem;
+  font-weight: normal;
 `;
 
 const H3 = stylish.h1`
