@@ -5,12 +5,19 @@ import stylish, { css } from "tiny-stylish-components";
 
 import Header from "../components/Header";
 import { Main } from "../components/stylish/Containers";
-import { H2, A } from "../components/stylish/Elements";
+import { H2, H3, A, P } from "../components/stylish/Elements";
+
+import "../utils/setup";
+
+const ArtistContainer = stylish.div`
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+`;
 
 const Artist = stylish.article`
   width: 20rem;
   display: inline-block;
-  margin-left: 2rem;
 `;
 
 const ArtistImg = stylish.img`
@@ -19,28 +26,26 @@ const ArtistImg = stylish.img`
   height: 20rem;
 `;
 
-// TODO: Extend this properly once template literals are fixed in stylish
-const H2Extended = stylish.h2`
-  font-family: 'Roboto', 'Open Sans', sans-serif;
-  font-size: 2rem;
+const H3Extended = H3.extend`
   text-transform: uppercase;
   border-bottom: solid 0.1rem #000000;
-  padding-bottom: 0.5rem;
-  text-align: left;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
 `;
 
 const SocialLink = A.extend`
   display: inline-block;
   margin: 0.5rem;
   text-decoration: none;
+  
   &:first-child {
     margin-left: 0;
   }
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-const SocialAnnotation = stylish.p`
+const SocialAnnotation = P.extend`
   display: block;
   text-transform: uppercase;
   margin-top: 0.5rem;
@@ -61,37 +66,37 @@ class Artists extends React.Component {
         <Header />
         <Main>
           <H2>Artists</H2>
-          {artists.map((artist, index) => {
-            return (
-              <Artist key={index}>
-                <H2Extended>
-                  {artist.name}
-                </H2Extended>
-                <ArtistImg
-                  src={artist.img}
-                  alt={artist.name}
-                  title={artist.name}
-                />
-                {Array.isArray(artist.socials) && (
-                  <SocialAnnotation>Follow this artist:</SocialAnnotation>
-                )}
-                <div>
-                  {Array.isArray(artist.socials) &&
-                    artist.socials.map((social, index) => {
-                      return (
-                        <SocialLink
-                          href={social.url}
-                          target="_blank"
-                          key={index}
-                        >
-                          {social.class.toUpperCase()}
-                        </SocialLink>
-                      );
-                    })}
-                </div>
-              </Artist>
-            );
-          })}
+          <ArtistContainer>
+            {artists.map((artist, index) => {
+              return (
+                <Artist key={index}>
+                  <H3Extended>{artist.name}</H3Extended>
+                  <ArtistImg
+                    src={artist.img}
+                    alt={artist.name}
+                    title={artist.name}
+                  />
+                  {Array.isArray(artist.socials) && (
+                    <SocialAnnotation>Follow this artist:</SocialAnnotation>
+                  )}
+                  <div>
+                    {Array.isArray(artist.socials) &&
+                      artist.socials.map((social, index) => {
+                        return (
+                          <SocialLink
+                            href={social.url}
+                            target="_blank"
+                            key={index}
+                          >
+                            {social.class.toUpperCase()}
+                          </SocialLink>
+                        );
+                      })}
+                  </div>
+                </Artist>
+              );
+            })}
+          </ArtistContainer>
         </Main>
       </div>
     );

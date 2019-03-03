@@ -3,8 +3,8 @@ import stylish from "tiny-stylish-components";
 
 const Socials = stylish.div`
   position: fixed;
-  top: 5px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   z-index: 125;
 `;
 

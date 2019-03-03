@@ -1,20 +1,18 @@
 import React, { Component } from "react";
+import Head from "next/head";
 import stylish from "tiny-stylish-components";
 
 import Socials from "./Socials";
 
 const NAV = stylish.nav`
-  margin-bottom: 2.5rem;
-  -webkit-background-size: 5rem 5rem;
-  background-size: 5rem 5rem;
-  margin-bottom: 4rem;
-  display: block;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const NAV_UL = stylish.ul`
   text-align: right;
   margin-right: 2.5%;
-  margin-top: 8rem;
+  margin-top: 45px;
 `;
 
 const LI = stylish.li`
@@ -28,15 +26,19 @@ const A = stylish.a`
   text-decoration: none;
   color: #000000;
   margin-left: 1.5rem;
+
   &:hover {
     color: #893f43;
   }
 `;
 
+const LOGO_CONTAINER = stylish.a`
+  margin-top: 20px;
+  margin-left: 40px;
+  display: block;
+`;
+
 const LOGO = stylish.img`
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   height: 75px;
   width: auto;
 `;
@@ -45,17 +47,22 @@ export default class Header extends Component {
   render() {
     return (
       <header>
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300"
+            rel="stylesheet"
+          />
+          <style>{`html, body { margin: 0; padding: 0; }`}</style>
+        </Head>
         <Socials />
         <NAV>
-          <h1>
-            <a href="/">
-              <LOGO
-                src={"/static/images/styled_logo.png"}
-                alt="Sanguine logo"
-                title="Sanguine"
-              />
-            </a>
-          </h1>
+          <LOGO_CONTAINER href="/">
+            <LOGO
+              src={"/static/images/styled_logo.png"}
+              alt="Sanguine logo"
+              title="Sanguine"
+            />
+          </LOGO_CONTAINER>
           <NAV_UL>
             <LI>
               <A href="/" className="underline">

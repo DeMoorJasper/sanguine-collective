@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1166,9 +1166,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "../../node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tiny-stylish-components */ "tiny-stylish-components");
-/* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Socials__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Socials */ "./components/Socials.jsx");
+/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next-server/head */ "next-server/head");
+/* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tiny-stylish-components */ "tiny-stylish-components");
+/* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Socials__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Socials */ "./components/Socials.jsx");
 
 
 
@@ -1177,8 +1179,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/jasperdemoor/Documents/open-source/sanguine/packages/frontend/components/Header.jsx";
 
+function _templateObject6() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  height: 75px;\n  width: auto;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject5() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  position: absolute;\n  top: 2rem;\n  left: 2rem;\n  height: 75px;\n  width: auto;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  margin-top: 20px;\n  margin-left: 40px;\n  display: block;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1188,7 +1200,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  font-size: 2rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  color: #000000;\n  margin-left: 1.5rem;\n  &:hover {\n    color: #893f43;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  font-size: 2rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  color: #000000;\n  margin-left: 1.5rem;\n\n  &:hover {\n    color: #893f43;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1208,7 +1220,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  text-align: right;\n  margin-right: 2.5%;\n  margin-top: 8rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  text-align: right;\n  margin-right: 2.5%;\n  margin-top: 45px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1218,7 +1230,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  margin-bottom: 2.5rem;\n  -webkit-background-size: 5rem 5rem;\n  background-size: 5rem 5rem;\n  margin-bottom: 4rem;\n  display: block;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  display: flex;\n  justify-content: space-between;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1230,11 +1242,13 @@ function _templateObject() {
 
 
 
-var NAV = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default.a.nav(_templateObject());
-var NAV_UL = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default.a.ul(_templateObject2());
-var LI = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default.a.li(_templateObject3());
-var A = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default.a.a(_templateObject4());
-var LOGO = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_7___default.a.img(_templateObject5());
+
+var NAV = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.nav(_templateObject());
+var NAV_UL = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.ul(_templateObject2());
+var LI = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.li(_templateObject3());
+var A = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.a(_templateObject4());
+var LOGO_CONTAINER = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.a(_templateObject5());
+var LOGO = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_8___default.a.img(_templateObject6());
 
 var Header =
 /*#__PURE__*/
@@ -1253,32 +1267,46 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("header", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Socials__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(NAV, {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 49
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_7___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 50
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
-        href: "/",
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
+        href: "https://fonts.googleapis.com/css?family=Roboto:300",
+        rel: "stylesheet",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("style", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, "html, body { margin: 0; padding: 0; }")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Socials__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(NAV, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(LOGO_CONTAINER, {
+        href: "/",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(LOGO, {
@@ -1287,19 +1315,19 @@ function (_Component) {
         title: "Sanguine",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 60
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(NAV_UL, {
+      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(NAV_UL, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 66
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(LI, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(A, {
@@ -1307,13 +1335,13 @@ function (_Component) {
         className: "underline",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 68
         },
         __self: this
       }, "music")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(LI, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 72
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(A, {
@@ -1321,13 +1349,13 @@ function (_Component) {
         className: "underline",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 73
         },
         __self: this
       }, "artists")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(LI, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(A, {
@@ -1335,7 +1363,7 @@ function (_Component) {
         className: "underline",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 78
         },
         __self: this
       }, "contact")))));
@@ -1428,7 +1456,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  position: fixed;\n  top: 5px;\n  right: 10px;\n  z-index: 125;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  z-index: 125;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1557,10 +1585,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "../../node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tiny-stylish-components */ "tiny-stylish-components");
 /* harmony import */ var tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/theme */ "./utils/theme.js");
 
 
 function _templateObject5() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: ", ";\n  font-size: 1.1rem;\n  text-decoration: underline;\n  color: #000000;\n\n  &:hover {\n    color: #893f43;\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1570,7 +1599,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: ", ";\n  font-size: 1.1rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1580,7 +1609,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  font-size: 2rem;\n  text-transform: uppercase;\n  padding-bottom: 0.5rem;\n  margin-top: 2rem;\n  margin-bottom: 0.5rem;\n  text-align: left;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: ", ";\n  font-size: 1.2rem;\n  text-transform: uppercase;\n  padding-bottom: 0.5rem;\n  margin-top: 2rem;\n  margin-bottom: 0.5rem;\n  text-align: left;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1590,7 +1619,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  font-size: 2rem;\n  text-transform: uppercase;\n  border-bottom: solid 0.1rem #000000;\n  padding-bottom: 0.5rem;\n  text-align: left;\n  margin-bottom: 0.5rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: ", ";\n  font-size: 1.5rem;\n  text-transform: uppercase;\n  border-bottom: solid 0.1rem #000000;\n  padding-bottom: 0.5rem;\n  text-align: left;\n  margin-bottom: 0.5rem;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1600,7 +1629,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  text-align: left;\n  font-size: 3rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-family: ", ";\n  text-align: left;\n  font-size: 3rem;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1610,11 +1639,12 @@ function _templateObject() {
 }
 
 
-var H1 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject());
-var H2 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject2());
-var H3 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject3());
-var P = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.p(_templateObject4());
-var A = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.a(_templateObject5());
+
+var H1 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject(), _utils_theme__WEBPACK_IMPORTED_MODULE_2__["FONT_FAMILY"]);
+var H2 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject2(), _utils_theme__WEBPACK_IMPORTED_MODULE_2__["FONT_FAMILY"]);
+var H3 = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1(_templateObject3(), _utils_theme__WEBPACK_IMPORTED_MODULE_2__["FONT_FAMILY"]);
+var P = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.p(_templateObject4(), _utils_theme__WEBPACK_IMPORTED_MODULE_2__["FONT_FAMILY"]);
+var A = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_1___default.a.a(_templateObject5(), _utils_theme__WEBPACK_IMPORTED_MODULE_2__["FONT_FAMILY"]);
 
 
 /***/ }),
@@ -1650,6 +1680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
 /* harmony import */ var _components_stylish_Containers__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/stylish/Containers */ "./components/stylish/Containers.js");
 /* harmony import */ var _components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/stylish/Elements */ "./components/stylish/Elements.js");
+/* harmony import */ var _utils_setup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/setup */ "./utils/setup.js");
 
 
 
@@ -1661,8 +1692,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/jasperdemoor/Documents/open-source/sanguine/packages/frontend/pages/artists.jsx";
 
-function _templateObject5() {
+function _templateObject6() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  display: block;\n  text-transform: uppercase;\n  margin-top: 0.5rem;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  display: inline-block;\n  margin: 0.5rem;\n  text-decoration: none;\n  \n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:hover {\n    text-decoration: underline;\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1672,7 +1713,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  display: inline-block;\n  margin: 0.5rem;\n  text-decoration: none;\n  &:first-child {\n    margin-left: 0;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  text-transform: uppercase;\n  border-bottom: solid 0.1rem #000000;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1682,7 +1723,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  font-family: 'Roboto', 'Open Sans', sans-serif;\n  font-size: 2rem;\n  text-transform: uppercase;\n  border-bottom: solid 0.1rem #000000;\n  padding-bottom: 0.5rem;\n  text-align: left;\n  margin-bottom: 0.5rem;\n  margin-top: 1rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  float: none;\n  width: 20rem;\n  height: 20rem;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1692,7 +1733,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  float: none;\n  width: 20rem;\n  height: 20rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  width: 20rem;\n  display: inline-block;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1702,7 +1743,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  width: 20rem;\n  display: inline-block;\n  margin-left: 2rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_8__["default"])(["\n  display: flex;\n  justify-content: space-between;\n  flex-flow: row wrap;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1718,12 +1759,13 @@ function _templateObject() {
 
 
 
-var Artist = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.article(_templateObject());
-var ArtistImg = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.img(_templateObject2()); // TODO: Extend this properly once template literals are fixed in stylish
 
-var H2Extended = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.h2(_templateObject3());
-var SocialLink = _components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__["A"].extend(_templateObject4());
-var SocialAnnotation = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.p(_templateObject5());
+var ArtistContainer = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.div(_templateObject());
+var Artist = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.article(_templateObject2());
+var ArtistImg = tiny_stylish_components__WEBPACK_IMPORTED_MODULE_12___default.a.img(_templateObject3());
+var H3Extended = _components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__["H3"].extend(_templateObject4());
+var SocialLink = _components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__["A"].extend(_templateObject5());
+var SocialAnnotation = _components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__["P"].extend(_templateObject6());
 
 var Artists =
 /*#__PURE__*/
@@ -1743,39 +1785,45 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 65
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_13__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 66
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_stylish_Containers__WEBPACK_IMPORTED_MODULE_14__["Main"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_stylish_Elements__WEBPACK_IMPORTED_MODULE_15__["H2"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 68
         },
         __self: this
-      }, "Artists"), artists.map(function (artist, index) {
+      }, "Artists"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(ArtistContainer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }, artists.map(function (artist, index) {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Artist, {
           key: index,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 72
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(H2Extended, {
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(H3Extended, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 73
           },
           __self: this
         }, artist.name), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(ArtistImg, {
@@ -1784,19 +1832,19 @@ function (_React$Component) {
           title: artist.name,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 74
           },
           __self: this
         }), _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2___default()(artist.socials) && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(SocialAnnotation, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 80
           },
           __self: this
         }, "Follow this artist:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 82
           },
           __self: this
         }, _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2___default()(artist.socials) && artist.socials.map(function (social, index) {
@@ -1806,12 +1854,12 @@ function (_React$Component) {
             key: index,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 82
+              lineNumber: 86
             },
             __self: this
           }, social.class.toUpperCase());
         })));
-      })));
+      }))));
     }
   }], [{
     key: "getInitialProps",
@@ -1857,7 +1905,53 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./utils/constants.js":
+/*!****************************!*\
+  !*** ./utils/constants.js ***!
+  \****************************/
+/*! exports provided: API_URL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_URL", function() { return API_URL; });
+var API_URL = "https://api.sanguinecollective.eu";
+
+/***/ }),
+
+/***/ "./utils/setup.js":
+/*!************************!*\
+  !*** ./utils/setup.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./utils/constants.js");
+
+
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = _constants__WEBPACK_IMPORTED_MODULE_1__["API_URL"];
+
+/***/ }),
+
+/***/ "./utils/theme.js":
+/*!************************!*\
+  !*** ./utils/theme.js ***!
+  \************************/
+/*! exports provided: FONT_FAMILY */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FONT_FAMILY", function() { return FONT_FAMILY; });
+var FONT_FAMILY = "'Roboto', sans-serif";
+
+/***/ }),
+
+/***/ 3:
 /*!*********************************!*\
   !*** multi ./pages/artists.jsx ***!
   \*********************************/
@@ -2031,6 +2125,17 @@ module.exports = require("next-server/dist/lib/router/router");
 /***/ (function(module, exports) {
 
 module.exports = require("next-server/dist/lib/utils");
+
+/***/ }),
+
+/***/ "next-server/head":
+/*!***********************************!*\
+  !*** external "next-server/head" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-server/head");
 
 /***/ }),
 

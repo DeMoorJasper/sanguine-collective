@@ -11,19 +11,26 @@ import { H2 } from "../components/stylish/Elements";
 
 const MusicContainer = stylish.section`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-flow: row wrap;
 `;
 
 const CoverArt = stylish.img`
   width: 200px;
   height: 200px;
+  margin: 0;
   background: lightgrey;
 `;
 
 const TrackCover = stylish.a`
+  width: 200px;
+  height: 200px;
   margin: 10px;
+  border: 5px solid transparent;
+
+  &:hover {
+    border: 5px solid #893f43;
+  }
 `;
 
 class Index extends React.Component {

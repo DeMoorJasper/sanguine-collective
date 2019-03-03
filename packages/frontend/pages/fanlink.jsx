@@ -7,6 +7,8 @@ import FanlinkHeader from "../components/FanlinkHeader";
 import { Main } from "../components/stylish/Containers";
 import { API_URL } from "../utils/constants";
 
+import '../utils/setup';
+
 const H2 = stylish.h2`
   font-family: 'Roboto', 'Open Sans', sans-serif;
   text-transform: uppercase;
