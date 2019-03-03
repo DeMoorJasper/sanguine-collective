@@ -9,7 +9,7 @@
     { "src": "/api/(.*)", "dest": "/packages/api/$1" },
     { "src": "/(.*)", "dest": "/packages/frontend/$1" }
   ],
-  "alias": ["sanguinecollective.eu", "www.sanguinecollective.eu"],
+  "alias": ["sanguinecollective.eu", "www.sanguinecollective.eu", "fanlink.sanguinecollective.eu", "www.fanlink.sanguinecollective.eu"],
   "env": {
     "GCLOUD_SERVICE_ACCOUNT": "@sangu_gcloud_service_account"
   }
