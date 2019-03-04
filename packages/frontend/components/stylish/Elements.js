@@ -39,6 +39,7 @@ const A = stylish.a`
   font-size: 1.1rem;
   text-decoration: underline;
   color: #000000;
+  cursor: pointer;
 
   &:hover {
     color: #893f43;

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "next/router";
+import Link from "next/link";
 import stylish, { css } from "tiny-stylish-components";
 
 import FanlinkHeader from "../components/FanlinkHeader";
@@ -8,7 +9,7 @@ import { A, H2 } from "../components/stylish/Elements";
 import { Main } from "../components/stylish/Containers";
 import { API_URL } from "../utils/constants";
 
-import '../utils/setup';
+import "../utils/setup";
 
 const FanlinkH2 = H2.extend`
   text-transform: uppercase;
@@ -61,45 +62,66 @@ const LI = stylish.li`
 
 class Fanlink extends React.Component {
   static async getInitialProps({ query }) {
-    let fanlink = await axios.get(`/fanlink?id=${query['id']}`);
+    try {
+      let fanlink = await axios.get(`/fanlink?id=${query["id"]}`);
 
-    return { fanlink: fanlink.data };
+      return { fanlink: fanlink.data };
+    } catch (e) {
+      return { fanlink: null };
+    }
   }
 
   render() {
     let { fanlink } = this.props;
 
+    if (!fanlink) {
+    }
+
     return (
-      <div>
+      <React.Fragment>
         <FanlinkHeader />
         <MainExtended>
-          <FanlinkH2>{fanlink.songtitle}</FanlinkH2>
-          <IMG
-            src={fanlink.coverimg}
-            alt={fanlink.songtitle}
-            title={fanlink.songtitle}
-          />
-          <Links>
-            <UL>
-              {Array.isArray(fanlink.links) &&
-                fanlink.links.map((link, index) => {
-                  return (
-                    <LI key={index}>
-                      <FanlinkAnchor
-                        href={`${API_URL}/fanlinkredirect?id=${
-                          fanlink.id
-                        }&platform=${link.platform}`}
-                      >
-                        <i className={`fa ${link.icon}`} aria-hidden="true" />{" "}
-                        {link.platform}
-                      </FanlinkAnchor>
-                    </LI>
-                  );
-                })}
-            </UL>
-          </Links>
+          {fanlink ? (
+            <React.Fragment>
+              <FanlinkH2>{fanlink.songtitle}</FanlinkH2>
+              <IMG
+                src={fanlink.coverimg}
+                alt={fanlink.songtitle}
+                title={fanlink.songtitle}
+              />
+              <Links>
+                <UL>
+                  {Array.isArray(fanlink.links) &&
+                    fanlink.links.map((link, index) => {
+                      return (
+                        <LI key={index}>
+                          <FanlinkAnchor
+                            href={`${API_URL}/fanlinkredirect?id=${
+                              fanlink.id
+                            }&platform=${link.platform}`}
+                          >
+                            <i
+                              className={`fa ${link.icon}`}
+                              aria-hidden="true"
+                            />{" "}
+                            {link.platform}
+                          </FanlinkAnchor>
+                        </LI>
+                      );
+                    })}
+                </UL>
+              </Links>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <FanlinkH2>Fanlink not found.</FanlinkH2>
+              <Link href="/">
+                <FanlinkAnchor>Go to all music</FanlinkAnchor>
+              </Link>
+            </React.Fragment>
+          )}
         </MainExtended>
-      </div>
+      </React.Fragment>
     );
   }
 }

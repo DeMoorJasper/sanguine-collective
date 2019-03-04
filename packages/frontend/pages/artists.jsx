@@ -35,7 +35,7 @@ const SocialLink = A.extend`
   display: inline-block;
   margin: 0.5rem;
   text-decoration: none;
-  
+
   &:first-child {
     margin-left: 0;
   }
@@ -53,9 +53,13 @@ const SocialAnnotation = P.extend`
 
 class Artists extends React.Component {
   static async getInitialProps({ query }) {
-    let artists = await axios.get("/artist");
+    try {
+      let artists = await axios.get("/artist");
 
-    return { artists: artists.data };
+      return { artists: artists.data };
+    } catch (e) {
+      return { artists: [] };
+    }
   }
 
   render() {
