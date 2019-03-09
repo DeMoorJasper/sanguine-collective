@@ -3,6 +3,7 @@ import Head from "next/head";
 import stylish from "tiny-stylish-components";
 
 import Socials from "./Socials";
+import SanguHead from "./Head";
 
 const NAV = stylish.nav`
   display: flex;
@@ -43,45 +44,39 @@ const LOGO = stylish.img`
   width: auto;
 `;
 
-export default class Header extends Component {
-  render() {
-    return (
-      <header>
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300"
-            rel="stylesheet"
+export default function Header(props) {
+  let { titleText } = props;
+
+  return (
+    <header>
+      <SanguHead titleText={titleText} />
+      <Socials />
+      <NAV>
+        <LOGO_CONTAINER href="/">
+          <LOGO
+            src={"/static/images/styled_logo.png"}
+            alt="Sanguine logo"
+            title="Sanguine"
           />
-          <style>{`html, body { margin: 0; padding: 0; }`}</style>
-        </Head>
-        <Socials />
-        <NAV>
-          <LOGO_CONTAINER href="/">
-            <LOGO
-              src={"/static/images/styled_logo.png"}
-              alt="Sanguine logo"
-              title="Sanguine"
-            />
-          </LOGO_CONTAINER>
-          <NAV_UL>
-            <LI>
-              <A href="/" className="underline">
-                music
-              </A>
-            </LI>
-            <LI>
-              <A href="/artists" className="underline">
-                artists
-              </A>
-            </LI>
-            <LI>
-              <A href="/contact" className="underline">
-                contact
-              </A>
-            </LI>
-          </NAV_UL>
-        </NAV>
-      </header>
-    );
-  }
+        </LOGO_CONTAINER>
+        <NAV_UL>
+          <LI>
+            <A href="/" className="underline">
+              music
+            </A>
+          </LI>
+          <LI>
+            <A href="/artists" className="underline">
+              artists
+            </A>
+          </LI>
+          <LI>
+            <A href="/contact" className="underline">
+              contact
+            </A>
+          </LI>
+        </NAV_UL>
+      </NAV>
+    </header>
+  );
 }

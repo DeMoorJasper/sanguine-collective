@@ -73,13 +73,13 @@ class Fanlink extends React.Component {
 
   render() {
     let { fanlink } = this.props;
-
-    if (!fanlink) {
-    }
-
+    
     return (
       <React.Fragment>
-        <FanlinkHeader />
+        <FanlinkHeader
+          titleText={fanlink ? fanlink.songtitle : "Fanlink not found"}
+          metaImage={fanlink && fanlink.coverimg}
+        />
         <MainExtended>
           {fanlink ? (
             <React.Fragment>

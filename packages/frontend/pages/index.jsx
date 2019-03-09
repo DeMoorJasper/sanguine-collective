@@ -49,7 +49,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header titleText="Music" />
         <Main>
           <H2>Music</H2>
           <MusicContainer>

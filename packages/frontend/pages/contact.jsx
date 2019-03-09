@@ -9,7 +9,7 @@ import { H2, H3, P, A } from '../components/stylish/Elements';
 class Contact extends React.Component {
   render() {
     return <div>
-      <Header />
+      <Header titleText="Contact" />
       <Main>
         <H2>Contact</H2>
         <H3>Location</H3>

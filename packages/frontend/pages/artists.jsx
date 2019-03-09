@@ -67,7 +67,7 @@ class Artists extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header titleText="Artists" />
         <Main>
           <H2>Artists</H2>
           <ArtistContainer>
