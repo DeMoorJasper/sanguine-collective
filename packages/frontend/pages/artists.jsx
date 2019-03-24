@@ -81,7 +81,7 @@ class Artists extends React.Component {
                     title={artist.name}
                   />
                   {Array.isArray(artist.socials) && (
-                    <SocialAnnotation>Follow this artist:</SocialAnnotation>
+                    <SocialAnnotation>Follow on social media:</SocialAnnotation>
                   )}
                   <div>
                     {Array.isArray(artist.socials) &&
